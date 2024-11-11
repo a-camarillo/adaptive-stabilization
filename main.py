@@ -101,10 +101,10 @@ def p2_bar(x1, tuning_parameter):
     # again, trying to split up the composition of the function for "cleanliness"
     part1 = (5/8)*((9/4)**(3/5))*((10/7)**(8/5))
     print(f'bar part1: {part1}')
-    x2_star_derivative = np.abs((-smoothing_function(tuning_parameter)**(5/3))*(switching_rule(tuning_parameter)**(5/3))*(3.17480+(7.67506*(x1**2)/(np.abs(x1)**(4/3)))))
+    x2_star_derivative = np.abs((-smoothing_function(tuning_parameter)**(5/3))*(switching_rule(tuning_parameter)**(5/3))*((3.07002*(x1))/(np.abs(x1)**(4/3))))
     print(f'x2_star_derivative: {x2_star_derivative}')
     part2 = (((h1_bar*smoothing_function(tuning_parameter)*(beta1(x1)))**(8/5)) + (small_gamma1*(x1**(2/5)))**(8/5))
-    print(f'bar part2: {part2}')
+    print(f'dx2_start * part2: {(x2_star_derivative**(8/5))*part2}')
     return part1*(x2_star_derivative**(8/5))*part2+(14/5)*x2_star_derivative*2.5
 
 def beta2(x1, x2, tuning_parameter):
