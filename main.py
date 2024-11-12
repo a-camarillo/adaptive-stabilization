@@ -125,7 +125,8 @@ def control_law(x1, x2, tuning_parameter):
 
     return -gamma2*(ksi2**(1/5))*beta2x
 
-
+# from plugging in given constants, the system is found to as
+# [x1_dot, x2_dot]' = [-2x1 + 1.5x2, (11/6)(x1^2) - 2(x2) + u]
 def system(t, x):
     x1, x2 = x
     for k in range(0, 4):
